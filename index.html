@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Drop-Off Locations</title>
+  <style>
+    #locations {
+      margin-top: 20px;
+    }
+
+    .location {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    body
+    {
+        font-family: Arial, sans-serif;
+            margin: 20;
+            height: 100vh;
+
+            align-items:normal;
+            justify-content: center;
+            background: linear-gradient(250deg,black,green );
+    }
+    
+  </style>
+</head>
+<body>
+    <div id="locations">
+        <h2>Drop-off Locations</h2>
+        <div id="locationList"></div>
+      </div>
+    
+      
+    <script>
+        const dropOffLocations = [
+          { name: 'Recycling Center', address: '123 Recycling St' },
+          { name: 'Waste Disposal Facility', address: '456 Disposal Ave' },
+          
+        ];
+         
+         function displayDropOffLocations() {
+          const locationList = document.getElementById('locationList');
+          locationList.innerHTML = '';
+    
+          dropOffLocations.forEach(location => {
+            const locationElement = document.createElement('div');
+            locationElement.className = 'location';
+            locationElement.innerHTML = `<strong>${location.name}</strong><br>${location.address}`;
+            locationList.appendChild(locationElement);
+          });
+        }
+        displayDropOffLocations();
+    </script>
